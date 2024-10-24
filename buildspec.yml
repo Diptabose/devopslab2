@@ -10,12 +10,12 @@ phases:
     commands:
       - echo Building the Docker image...
       - docker build -t diptabose-pipeline-ecr:latest .
-      - docker tag diptabose-pipeline-ecr:latest 864899837235.dkr.ecr.ap-south-1.amazonaws.com/diptabose484/awstraining:latest
+      - docker tag diptabose-pipeline-ecr:latest 864899837235.dkr.ecr.ap-south-1.amazonaws.com/diptabose484/awstraining:pipeline-ecs
 
   post_build:
     commands:
       - echo Pushing the Docker image to ECR...
-      - docker push 864899837235.dkr.ecr.ap-south-1.amazonaws.com/diptabose484/awstraining:latest
+      - docker push 864899837235.dkr.ecr.ap-south-1.amazonaws.com/diptabose484/awstraining:pipeline-ecs
 
 artifacts:
   files: appspec.yml
